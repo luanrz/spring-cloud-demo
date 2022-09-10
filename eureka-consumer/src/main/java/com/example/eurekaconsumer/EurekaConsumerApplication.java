@@ -1,4 +1,4 @@
-package com.example.nacosconsumer;
+package com.example.eurekaconsumer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -16,10 +16,10 @@ import java.util.stream.Collectors;
 
 @SpringBootApplication
 @EnableDiscoveryClient(autoRegister = false)
-public class NacosConsumerApplication {
+public class EurekaConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NacosConsumerApplication.class, args);
+        SpringApplication.run(EurekaConsumerApplication.class, args);
     }
 
     @Bean
@@ -35,7 +35,7 @@ public class NacosConsumerApplication {
         @Autowired
         private RestTemplate restTemplate;
 
-        private String serviceName = "nacos-provider";
+        private String serviceName = "eureka-provider";
 
         @GetMapping("/info")
         public String info() {
@@ -48,7 +48,7 @@ public class NacosConsumerApplication {
         public String hello() {
             List<ServiceInstance> instances = discoveryClient.getInstances(serviceName);
             ServiceInstance serviceInstance = instances.stream().findAny().orElseThrow(() -> new IllegalStateException("no " + serviceName + " instance available"));
-            return restTemplate.getForObject("http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/echo?name=nacos",String.class);
+            return restTemplate.getForObject("http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/echo?name=eureka",String.class);
         }
     }
 }
