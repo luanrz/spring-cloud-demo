@@ -6,7 +6,7 @@
     <artifactId>eureka-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>eureka-consumer</name>
-    <description>Demo project for Spring Boot</description>
+    <description>eureka consumer</description>
 
     <properties>
         <java.version>1.8</java.version>
