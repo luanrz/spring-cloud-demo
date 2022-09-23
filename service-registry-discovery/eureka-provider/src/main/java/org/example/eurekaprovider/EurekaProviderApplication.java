@@ -28,7 +28,7 @@ public class EurekaProviderApplication {
             return "echo:" + request.getParameter("name");
         }
 
-        @GetMapping("/serverIpPort")
+        @GetMapping("/info")
         public String info() throws UnknownHostException {
             return InetAddress.getLocalHost().getHostAddress() + ":" + environment.getProperty("server.port");
         }

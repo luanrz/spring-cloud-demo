@@ -11,6 +11,7 @@
 
     <modules>
         <module>load-balancer</module>
+        <module>open-feign</module>
     </modules>
 
     <properties>

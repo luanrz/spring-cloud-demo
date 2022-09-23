@@ -26,7 +26,7 @@ class CustomChooserController {
     @GetMapping("/customChooser")
     public String customChooser() {
         ServiceInstance serviceInstance = randomServiceInstanceChooser.choose(serviceName);
-        return restTemplate.getForObject(String.format("http://%s:%s/serverIpPort", serviceInstance.getHost(), serviceInstance.getPort()), String.class);
+        return restTemplate.getForObject(String.format("http://%s:%s/info", serviceInstance.getHost(), serviceInstance.getPort()), String.class);
     }
 
     @Component

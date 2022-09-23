@@ -37,7 +37,7 @@ public class EurekaConsumerApplication {
 
         private String serviceName = "eureka-provider";
 
-        @GetMapping("/info")
+        @GetMapping("/services")
         public String info() {
             String serviceInfo = discoveryClient.getServices().toString();
             String instanceInfo = discoveryClient.getInstances(serviceName).stream().map(instance -> "InstanceId: " + instance.getInstanceId() + "<br>ServiceId: " + instance.getServiceId() + "<br>Host: " + instance.getHost() + "<br>Port: " + instance.getPort() + "<br>").collect(Collectors.joining());

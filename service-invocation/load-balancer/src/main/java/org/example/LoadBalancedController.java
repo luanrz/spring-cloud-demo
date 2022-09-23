@@ -36,7 +36,7 @@ class LoadBalancedController {
 
     @GetMapping("/loadBalanced")
     public String loadBalanced() {
-        return restTemplate.getForObject(String.format("http://%s/serverIpPort", serviceName), String.class);
+        return restTemplate.getForObject(String.format("http://%s/info", serviceName), String.class);
     }
 
 
