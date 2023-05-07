@@ -3,6 +3,7 @@ package org.example;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.Request;
 import org.springframework.cloud.client.loadbalancer.ServiceInstanceChooser;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -43,6 +44,11 @@ class CustomChooserController {
         public ServiceInstance choose(String serviceId) {
             List<ServiceInstance> instances = discoveryClient.getInstances(serviceId);
             return instances.get(random.nextInt(instances.size()));
+        }
+
+        @Override
+        public <T> ServiceInstance choose(String serviceId, Request<T> request) {
+            return null;
         }
     }
 
