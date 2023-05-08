@@ -29,8 +29,19 @@
         <!-- 该组件依赖了SpringCloudLoadBalancer组件（老版本为Ribbon）来实现负载均衡 -->
         <!-- 如果将负载均衡交给K8S，就没有必要引入客户端负载均衡组件了，直接将@FeignClient的url指向K8S的Service地址即可 -->
         <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!--
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        -->
+        <!-- 负载均衡组件（Feign需要） -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
     </dependencies>
 

@@ -23,7 +23,7 @@ public class OpenFeignApplication {
 
         @GetMapping("/hello")
         public String hello() {
-            return echoApi.echo("eureka");
+            return echoApi.echo("nacos");
         }
     }
 

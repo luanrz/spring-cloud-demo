@@ -21,7 +21,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- 服务发现组件 -->
-        <!-- 该组件依赖了spring-cloud-loadbalancer组件（老版本为ribbon）来实现负载均衡 -->
+        <!-- 该组件依赖了SpringCloudLoadBalancer组件（老版本为Ribbon）来实现负载均衡 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
