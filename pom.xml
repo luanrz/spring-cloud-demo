@@ -12,6 +12,7 @@
     <modules>
         <module>service-registry-discovery</module>
         <module>service-invocation</module>
+        <module>configuration</module>
     </modules>
 
     <properties>
