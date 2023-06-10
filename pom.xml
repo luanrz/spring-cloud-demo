@@ -13,6 +13,7 @@
         <module>service-registry-discovery</module>
         <module>service-invocation</module>
         <module>configuration</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
